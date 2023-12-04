@@ -5,7 +5,7 @@ Este proyecto fue generado con Angular CLI versión 16.2.10.
 Este sitio web esta construido en angular y firebase, y nos ayuda a gestionar notas o tareas de estudiantes. 
 
 ## Enlace
-[Nombre del Sitio Web](https://gestiontareas-9a107.web.app)
+[https://gestiontareas-9a107.web.app](https://gestiontareas-9a107.web.app)
 
 ## Requisitos del Sistema
 - Navegador web moderno (Chrome, Firefox, Safari, etc.).
@@ -24,4 +24,5 @@ Este proyecto utiliza Firebase para guardar las notas o tareas de los estudiante
 
 ## Características
 - La lista de nuestras tareas estan agrupadas de acuerdo a las categorias.
+- Puedes agregar tareas.
 - Puedes eliminar o actualizar una tarea segun lo necesario.
