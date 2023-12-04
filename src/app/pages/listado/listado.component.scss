@@ -1,0 +1,139 @@
+/* Estilos generales */
+div.tarea-content {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilos de las columnas */
+.column {
+  display: inline-block;
+  width: 25%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* Estilos de los botones */
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+/* Estilos de los botones de acción */
+.custom-button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: 2px solid #066eb3;
+  border-radius: 5px;
+  background-color: #066eb3;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #ffffff;
+  color: #066eb3;
+}
+
+.custom-button2 {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  border: 2px solid #030f4e;
+  border-radius: 5px;
+  background-color:#030f4e;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-button2:hover {
+  background-color: #ffffff;
+  color: #030f4e;
+}
+
+/* Estilos del enlace */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos de las acciones de tarea */
+.tarea-actions {
+  text-align: right;
+}
+
+/* Estilos de la descripción */
+p.descripcion {
+  font-style: italic;
+}
+
+/* Estilos del título de la tarea */
+h2 {
+  color: #333;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilos de la fecha */
+p.fecha {
+  font-weight: bold;
+}
+
+/* Estilos del contenedor principal */
+div * {
+  box-sizing: border-box;
+}
+
+/* Estilos de la lista */
+li {
+  margin-bottom: 20px;
+}
+
+/* Estilos del nombre del estudiante */
+p.nombre-estudiante {
+  font-weight: bold;
+}
+
+/* Estilos del nombre de la tarea */
+p.nombre-tarea {
+  font-weight: bold;
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media only screen and (max-width: 720px) {
+  .tarea-content {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc; /* Añade un borde para separar las tareas en pantallas más pequeñas */
+    margin-bottom: 15px; /* Añade espacio entre las tareas en pantallas más pequeñas */
+    padding: 10px; /* Ajusta el espacio interno de la tarea */
+  }
+
+  .column {
+    width: 100%; /* Hace que las columnas ocupen el ancho completo */
+    margin-bottom: 8px; /* Añade espacio entre las columnas */
+  }
+
+  .tarea-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los botones en pantallas más pequeñas */
+  }
+
+  .custom-button,
+  .custom-button2 {
+    width: 100%; /* Hace que los botones ocupen el ancho completo */
+    margin-bottom: 8px; /* Añade espacio entre los botones */
+  }
+}

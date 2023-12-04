@@ -1,0 +1,98 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    
+  }
+  
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta según sea necesario */
+    
+  }
+  #app {
+    flex: 1;
+  }
+
+  #nav{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(58, 51, 51);
+    background-color: #1b6d8d;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; /* O ajusta según sea necesario */;
+}
+  
+  .nav-title {
+    margin: 0; /* Elimina el margen predeterminado del h2 */
+    
+  }
+  
+  .nav__link {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav__link li {
+    margin: 0 10px; /* Ajusta el espacio entre los elementos según sea necesario */
+ 
+}
+  
+  .nav__link a {
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+  }
+
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+      
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .nav__column {
+      align-items: center; /* Centra el contenido del menú verticalmente */
+    }
+  
+    .nav__link {
+      flex-direction: column; /* Coloca los elementos del menú en una columna en pantallas más pequeñas */
+      text-align: center; /* Centra el texto del menú */
+    }
+  
+    .nav__link li {
+      margin: 10px 0; /* Agrega espacio entre los elementos del menú en pantallas más pequeñas */
+    }
+  }
+  
+  .content {
+    flex: 1; /* Hace que el contenido ocupe el espacio restante en la columna principal */
+    padding: 20px;
+  }
+  
+  #footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Estilos responsivos para el pie de página */
+  @media only screen and (max-width: 720px) {
+    #footer {
+      font-size: 14px; /* Ajusta el tamaño de fuente en pantallas más pequeñas */
+    }
+  }

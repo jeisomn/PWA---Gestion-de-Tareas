@@ -1,0 +1,45 @@
+<!--se creo un apartdao para darle la bienvenida y poner un slogan -->
+<div id="contenidototal">
+    <div id="contenido" class="partesuperior">
+        <p id="slogan">Bienvenidos
+
+        <div id="contenido">
+            "¡Hazlo hoy, no lo pospongas mañana!
+            <div id="contenido">
+                Agrega tus tareas con éxito."
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- se crea el formulario de agregar una tarea-->
+<form id="formularioNotas">
+    <h2>Agregar Nota o Tarea</h2>
+
+    <label for="nombreEstudiante">Nombre del Estudiante:</label>
+    <input type="text" id="nombreEstudiante" name="nombreEstudiante" [(ngModel)]="tareas.nombreEst">
+
+    <label for="nombreTarea">Nombre de la Tarea o Nota:</label>
+    <input type="text" id="nombreTarea" name="nombreTarea" [(ngModel)]="tareas.nombreTar" />
+
+    <label for="etiqueta">Categoria:</label>
+    <select id="etiqueta" name="etiqueta" [(ngModel)]="tareas.etiqueta">
+        <option value="Pruebas">Pruebas</option>
+        <option value="Examenes">Examenes</option>
+        <option value="Practicas">Practicas</option>
+        <option value="Trabajo">Trabajos</option>
+        <option value="otro">Otros</option>
+    </select>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" [rows]="8" name="descripcion" rows="4" [(ngModel)]="tareas.descripcion"></textarea>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" style="resize: none" [(ngModel)]="tareas.fecha" />
+
+    <!-- Se crean dos botones para guardar o actualizar las tareas-->
+    <div class="button">
+        <button class="custom-button" type="button" (click)="agregarTarea()">Agregar</button>
+        <button class="custom-button" type="button" (click)="actualizar()">Actualizar</button>
+    </div>
+</form>

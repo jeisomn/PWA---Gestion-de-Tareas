@@ -1,0 +1,109 @@
+/* Estilo para la bienvenida y el eslogan*/
+#contenidototal{
+  border: 2px solid black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+#contenido{
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/*Estilo para el formulario*/
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /*Estilo para el titulo*/
+  h2{
+    align-items: center;
+    text-align: center;
+  }
+
+/*Estilos para las entradas de texto*/
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    resize: vertical;
+    border-radius: 10px;
+    border-color: black;
+  }
+
+/*Estilos para la parte superior del html*/
+  .partesuperior {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    text-align: center;
+  }
+
+  /*Centra los botones*/
+  .button {
+    text-align: center;
+}
+
+/*Estilos para los botones*/
+.custom-button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilizo al poner el cursor sobre el botton */
+.custom-button:hover {
+    background-color: #ffffff;
+    color: #3498db;
+}
+
+
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media only screen and (max-width: 720px) {
+  #formularioNotas {
+      max-width: 100%; /* Haz que el formulario ocupe el ancho completo en pantallas más pequeñas */
+      padding: 10px; /* Reduzca el espacio interno del formulario en pantallas más pequeñas */
+  }
+
+  label {
+      font-size: 14px; /* Reduce el tamaño de fuente para las etiquetas en pantallas más pequeñas */
+  }
+
+  input,
+  select,
+  textarea {
+      margin-bottom: 8px; /* Agrega un espacio más pequeño entre campos en pantallas más pequeñas */
+  }
+
+  .button {
+      flex-direction: column; /* Coloca los botones en una columna en pantallas más pequeñas */
+      align-items: center; /* Centra los botones horizontalmente */
+  }
+  
+  .custom-button {
+      margin-bottom: 8px; /* Agrega un espacio más pequeño entre botones en pantallas más pequeñas */
+  }
+}
