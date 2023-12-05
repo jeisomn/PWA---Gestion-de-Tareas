@@ -17,8 +17,6 @@ export class InicioComponent {
     private tareasService: NotasServiceService, 
     private firebaseTareas: FirebaseTareasService){ 
 
-    // this.router.navigate(['inicio']);
-
     let params = this.router.getCurrentNavigation()?.extras.queryParams;
     if (params) {
       console.log(params)
@@ -29,17 +27,22 @@ export class InicioComponent {
   
     //Metodo para agregar tareas
     agregarTarea() {    
+
+        // Validar si la tarea ya tiene un UID asignado, lo que indica que es una tarea existente
+  if (this.tareas.uid) {
+    alert('Esta tarea ya tiene un UID asignado. Utiliza el método de actualización en lugar de agregar.');
+    return false;
+  }
     // Guardar la receta en Firebase
-    if (!this.tareas.etiqueta || !this.tareas.nombreEst || !this.tareas.nombreTar || !this.tareas.descripcion || !this.tareas.fecha) {
+   else if (!this.tareas.etiqueta || !this.tareas.nombreEst || !this.tareas.nombreTar || !this.tareas.descripcion || !this.tareas.fecha) {
       alert('Por favor, completa todos los campos antes de agregar la tarea.');
       return false;
     }else{
-
     // Guardar la tarea en Firebase
+    alert('Tarea guardada exitosamente');
+    this.router.navigate(['pages/listado']);
     this.firebaseTareas.save(this.tareas)
       .then(() => {
-        alert('Tarea guardada exitosamente');
-        this.router.navigate(['pages/listado']);
         this.tareasService.addRecetas(this.tareas)
         this.tareas = new Tareas(); // Limpiar el modelo después de guardar en Firebase
         console.log('Tareas locales', this.tareasService.getTareas());
@@ -47,29 +50,35 @@ export class InicioComponent {
       .catch(error => {
         console.error('Error al guardar en Firebase', error);
       });}
-      
-      alert('Tarea guardada exitosamente');
-      this.router.navigate(['pages/listado']);
+    
     return false;
     };
 
     //Metodo para actualizar las tareas
     actualizar() {
-      // Asegúrate de que la tarea tenga un UID antes de intentar actualizar
-      if (this.tareas.uid) {
+      // Validación de campos después de asignar los parámetros
+      if (!this.tareas.uid) {
+        alert('La tarea no tiene un UID, no se puede actualizar.');
+        // Puedes redirigir al usuario a una página de error o hacer cualquier otra acción
+      } else if (
+        this.tareas.etiqueta === "" || this.tareas.nombreEst === "" || this.tareas.nombreTar === "" || this.tareas.descripcion === "" || this.tareas.descripcion === "" || this.tareas.fecha === null
+      ) {
+        alert('Por favor, completa todos los campos antes de actualizar la tarea.');
+        // Puedes redirigir al usuario a una página de error o hacer cualquier otra acción
+      } else {
         // Llama al método de actualización con la tarea actual
+        alert('Tarea actualizada exitosamente.');
         this.firebaseTareas.update(this.tareas)
           .then(() => {
-            alert('Tarea actualizada exitosamente.');
             this.router.navigate(['pages/listado']);
             // Aquí puedes realizar otras acciones después de la actualización
           })
-      } else {
-        alert('La tarea no tiene un UID, no se puede actualizar.');
-        // Puedes mostrar un mensaje de error en tu interfaz de usuario si lo deseas
+          .catch((error) => {
+            console.error('Error al actualizar la tarea:', error);
+          });
       }
-      
     }
+  
 
 }
 
